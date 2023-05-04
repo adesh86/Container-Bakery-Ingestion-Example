@@ -38,7 +38,7 @@ jobs:
         GIT_TAG: ${{ steps.git-tag-increment.outputs.git-tag }}
       run: |
         docker tag $IMAGE_NAME:latest us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:latest
-        docker tag $IMAGE_NAME:latest us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:$GIT-TAG
+        docker tag $IMAGE_NAME:latest us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:$GIT_TAG
         docker push us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:latest
-        docker push us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:$GIT-TAG
+        docker push us-central1-docker.pkg.dev/$PROJECT_ID/gar-bak-dev/$IMAGE_NAME:$GIT_TAG
 
