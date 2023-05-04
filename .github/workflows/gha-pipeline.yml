@@ -2,7 +2,7 @@
 name: Build and Push Node.js image to Google Artifactory Registry
 on: 
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   build-push-gar:
     name: Build and Push to GAR
