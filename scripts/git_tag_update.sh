@@ -42,7 +42,7 @@ else
   exit 1
 fi
 
-# create new tag
+# create new tag 
 NEW_TAG="$VNUM1.$VNUM2.$VNUM3"
 echo "($VERSION) updating $CURRENT_VERSION to $NEW_TAG"
 
