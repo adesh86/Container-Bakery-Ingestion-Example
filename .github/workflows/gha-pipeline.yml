@@ -45,8 +45,8 @@ jobs:
     - name: Check docker image scan status
       if: ${{ steps.docker-image-scan.outcome == 'failure' }}
       run: |
-      echo ${{ steps.docker-image-scan.outcome }}
-      exit 1     
+        echo ${{ steps.docker-image-scan.outcome }}
+        exit 1     
 
 
     - name: Release tagging
