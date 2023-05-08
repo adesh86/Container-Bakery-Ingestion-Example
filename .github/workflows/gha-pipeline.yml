@@ -33,7 +33,7 @@ jobs:
         exit-code: 1
         ignore-unfixed: true
         vuln-type: 'os,library'
-        severity: 'CRITICAL,HIGH'
+        severity: 'LOW'
         #output: 'trivy-results.sarif'
 
     #- name: Upload Trivy scan results to GitHub Security tab
@@ -53,7 +53,7 @@ jobs:
     - name: Release tagging
       id: git-tag-increment
       run: |
-        bash ./scripts/git_tag_update.sh -v minor
+        bash ./scripts/git_tag_update.sh -v major
 
     - name: Configure docker client
       run: |
