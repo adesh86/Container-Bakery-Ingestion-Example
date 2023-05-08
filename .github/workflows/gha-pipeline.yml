@@ -29,24 +29,25 @@ jobs:
       id: docker-image-scan
       with:
         image-ref: ${{ env.IMAGE_NAME }}
-        format: sarif
+        format: table
         exit-code: 1
         ignore-unfixed: true
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH'
-        output: 'trivy-results.sarif'
+        #output: 'trivy-results.sarif'
 
-    - name: Upload Trivy scan results to GitHub Security tab
-      uses: github/codeql-action/upload-sarif@v2
-      if: always()
-      with:
-        sarif_file: 'trivy-results.sarif'   
+    #- name: Upload Trivy scan results to GitHub Security tab
+    #  uses: github/codeql-action/upload-sarif@v2
+     # if: always()
+      #with:
+       # sarif_file: 'trivy-results.sarif'   
 
-    - name: Check docker image scan status
+    #- name: Check docker image scan status
+      #if: always()
       #if: ${{ steps.docker-image-scan.outcome == 'failure' }}
-      run: |
-        echo ${{ steps.docker-image-scan.outcome }}
-        exit 1     
+     # run: |
+       # echo ${{ steps.docker-image-scan.outcome }}
+        #exit 1     
 
 
     - name: Release tagging
