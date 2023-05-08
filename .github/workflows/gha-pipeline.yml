@@ -52,7 +52,7 @@ jobs:
     - name: Release tagging
       id: git-tag-increment
       run: |
-        bash ./scripts/git_tag_update.sh -v major
+        bash ./scripts/git_tag_update.sh -v minor
 
     - name: Configure docker client
       run: |
