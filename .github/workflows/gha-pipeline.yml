@@ -29,11 +29,11 @@ jobs:
       id: docker-image-scan
       with:
         image-ref: ${{ env.IMAGE_NAME }}
-        format: sarif
+        format: table
         exit-code: 1
         ignore-unfixed: true
         vuln-type: 'os,library'
-        #severity: 'CRITICAL,HIGH'
+        severity: 'CRITICAL,HIGH'
         #output: 'trivy-results.sarif'
 
     #- name: Upload Trivy scan results to GitHub Security tab
