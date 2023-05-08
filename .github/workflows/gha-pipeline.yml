@@ -34,6 +34,7 @@ jobs:
         ignore-unfixed: true
         vuln-type: 'os,library'
         severity: 'CRITICAL,HIGH'
+        ignore-policy: true
         #output: 'trivy-results.sarif'
 
     #- name: Upload Trivy scan results to GitHub Security tab
